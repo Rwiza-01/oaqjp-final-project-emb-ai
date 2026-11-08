@@ -1,15 +1,23 @@
 
+"""
+Flask application for detecting emotions in user-provided text.
+"""
+
 from flask import Flask, request
 from EmotionDetection.emotion_detection import emotion_detector
 
 app = Flask(__name__)
 
+
 @app.route("/")
 def home():
+    """Display the application's welcome message."""
     return "Welcome to the Emotion Detection Application!"
+
 
 @app.route("/emotionDetector")
 def sent():
+    """Analyze the submitted text and return its emotion scores."""
     text_to_analyze = request.args.get('textToAnalyze', '')
 
     response = emotion_detector(text_to_analyze)
@@ -34,6 +42,7 @@ def sent():
         f"and 'sadness': {sadness}. "
         f"The dominant emotion is {dominant_emotion}."
     )
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)

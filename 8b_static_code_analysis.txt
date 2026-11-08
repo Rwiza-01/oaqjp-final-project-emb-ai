@@ -1,0 +1,27 @@
+pylint server.py
+************* Module server
+server.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+server.py:8:0: C0116: Missing function or method docstring (missing-function-docstring)
+server.py:12:0: C0116: Missing function or method docstring (missing-function-docstring)
+
+-----------------------------------
+Your code has been rated at 8.42/10
+
+theia@theiadocker-geminusrwiza:/home/project/fi
+nal_project$ pylint server.py
+
+-------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 8.42/10, +1.58)pylint server.py
+************* Module server
+server.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+server.py:8:0: C0116: Missing function or method docstring (missing-function-docstring)
+server.py:12:0: C0116: Missing function or method docstring (missing-function-docstring)
+
+-----------------------------------
+Your code has been rated at 8.42/10
+
+theia@theiadocker-geminusrwiza:/home/project/fi
+nal_project$ pylint server.py
+
+-------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 8.42/10, +1.58)
