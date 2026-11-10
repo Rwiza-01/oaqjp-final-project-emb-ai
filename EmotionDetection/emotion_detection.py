@@ -3,6 +3,7 @@ import requests
 import json
 
 def emotion_detector(text_to_analyze):
+
     url = 'https://sn-watson-emotion.labs.skills.network/v1/watson.runtime.nlp.v1/NlpService/EmotionPredict'
 
     header = {
@@ -17,7 +18,7 @@ def emotion_detector(text_to_analyze):
 
     response = requests.post(url, headers=header, json=myobj)
 
-    # Handle blank input
+    # Check the server response status code
     if response.status_code == 400:
         return {
             'anger': None,
@@ -40,7 +41,6 @@ def emotion_detector(text_to_analyze):
 
     dominant_emotion = max(emotion_scores, key=emotion_scores.get)
 
-    # Return the required formatted dictionary
     return {
         'anger': anger_score,
         'disgust': disgust_score,
@@ -49,4 +49,3 @@ def emotion_detector(text_to_analyze):
         'sadness': sadness_score,
         'dominant_emotion': dominant_emotion
     }
-    
